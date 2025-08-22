@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   ollama:
     image: ollama/ollama:latest
@@ -11,7 +10,7 @@ services:
               count: all
               capabilities: [gpu]
     volumes:
-      - ollama_data:/root/.ollama
+      - ./ollama_data:/root/.ollama
     ports:
       - "11434:11434"
     environment:
@@ -19,6 +18,3 @@ services:
       - OLLAMA_ORIGINS=*
       - OLLAMA_KEEP_ALIVE=24h
     restart: unless-stopped
-
-volumes:
-  ollama_data:

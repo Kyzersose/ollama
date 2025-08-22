@@ -13,6 +13,8 @@ This repository provides a Dockerized setup for running [Ollama](https://ollama.
 ## Running Environment
 The conatiner is started through terminal from Windows to utilize Docker Desktop improvements.
     I was advised not to start this from directly from WSL
+My n8n server is running on the same subnet, so I added the DNS entry for ollama to make the node setup easier.
+I used a bind mount to keep the model data off of C:
 
 ### Usage
 
@@ -35,3 +37,9 @@ Contributions are welcome! Please open issues or pull requests for improvements.
 ## License
 
 This project is licensed under the MIT License.
+
+## Ollama helpers
+https://ollama.com/
+To pull a new model down:
+    docker exec -it [containername] ollama pull [model]
+    you can also run exec commands from Docker Desktop: ollama pull [model]
